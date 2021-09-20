@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <% if(typeof prompt !='undefined') { %>
+      <h1><%= prompt %><</h1>
+    <% } %>
+
+    <h1>Already a User? Login</h1>
+    <form action="login" method="POST">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="submit">
+    </form>
+
+    <h1>Signup</h1>
+    <form action="register" method="POST">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="submit">
+    </form>
+
+    <buttonn><a href="/register/"></a></buttonn>
+  </body>
+</html>
