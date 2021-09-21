@@ -14,17 +14,18 @@ router.get('/gallery', function(req, res, next) {
     res.locals.error = 403
     res.status(403);
     res.render('error');
-  }
-  MongoClient.connect(connectionString, { useUnifiedTopology: true })
-  .then(client => {
-    const db = client.db('backend-challenge')
-    const usersCollection = db.collection('images')
-    usersCollection.find().toArray()
-    .then((results) => {
-      console.log({results})
-      res.send(results)
+  } else {
+    MongoClient.connect(connectionString, { useUnifiedTopology: true })
+    .then(client => {
+      const db = client.db('backend-challenge')
+      const imagesCollection = db.collection('images')
+      let query = req.query 
+      imagesCollection.find(query).toArray()
+      .then((results) => {
+        res.send(JSON.stringify(results))
+      })
     })
-  })
+  }
 });
 
 router.get('/myimages', function(req, res, next) {
