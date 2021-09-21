@@ -21,6 +21,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 const connectionString = "mongodb+srv://Tester:Password123@cluster0.8oi2y.mongodb.net/test?retryWrites=true&w=majority"
+global.user_logged_in = false
 MongoClient.connect(connectionString, { useUnifiedTopology: true })
   .then(client => {
     const db = client.db('backend-challenge')

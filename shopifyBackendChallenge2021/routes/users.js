@@ -54,7 +54,9 @@ router.post('/login', function(req, res, next) {
         .then(results => {
           if (results.length > 0 ) {
             // User has logged in, lets redirect them somewhere
-            res.send("Logged in!")
+            global.userID = username
+            global.user_logged_in = true
+            res.render('home', { title: 'Home' });
           } else {
             res.send("Sorry wrong password.")
           }
