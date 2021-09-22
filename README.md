@@ -36,7 +36,7 @@ Endpoint | GET | POST | PUT
 
 Endpoint | GET | POST | PUT
 --- | --- | --- | ---
-`/gallery`| Returns data about images submitted by all users. `Optional Params: imageURL, Date Added, Owner, Added By, Tags` | *POST requests to request ownership of images that are appear in the gallery but are owned by other users. * | --
+`/gallery`| Returns data about images submitted by all users. `Optional Params: imageURL, Date Added, Owner, Added By, Tags` | *POST requests to request ownership of images that are appear in the gallery but are owned by other users.* | --
 `/myimages` | Returns all images that are owned by logged in user. Note: all requests have `Owner` param set to logged in user. `Optional Params: imageURL, Date Added, Added By, Tags`| -- | *Add ability to update tags that are associated to images*
 `viewPortal/assignImage` | --- | Add an image to gallery. `Required Params: imageURL, Date Added, Owner, AddedBy, tags`. Note if this request is made through UI at `https://shopify-challenge-winter-2021.herokuapp.com/viewPortal/` Owner, AddedBy & Date Added are populated by the backed. | --
 
